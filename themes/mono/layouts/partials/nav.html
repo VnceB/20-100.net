@@ -1,0 +1,9 @@
+<nav>
+  <div class="nav-inner">
+    <a href="{{ "/" | relURL }}" class="nav-logo">{{ .Site.Title }}</a>
+    <div class="nav-links">
+      <a href="{{ "/articles/" | relURL }}"{{ if eq .Section "articles" }} class="active"{{ end }}><span class="nav-accent">|</span> articles</a>
+      <a href="{{ .Site.Params.github }}" rel="noopener" target="_blank"><span class="nav-accent">|</span> github</a>
+    </div>
+  </div>
+</nav>

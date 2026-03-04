@@ -1,0 +1,25 @@
+{{ define "main" }}
+<section class="hero">
+  <h1 class="hero-name">{{ .Site.Title }}</h1>
+  <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
+  <p class="hero-desc">{{ .Site.Params.description }}</p>
+</section>
+
+<section class="recent">
+  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Recent Articles</h2>
+  {{ $articles := where .Site.RegularPages "Section" "articles" }}
+  {{ range first 5 $articles }}
+  <article class="article-item">
+    <a href="{{ .RelPermalink }}">
+      <span class="article-title">{{ .Title }}</span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </a>
+  </article>
+  {{ else }}
+  <p class="empty-state">No articles yet.</p>
+  {{ end }}
+  {{ if gt (len $articles) 5 }}
+  <a href="{{ "/articles/" | relURL }}" class="view-all">View all articles →</a>
+  {{ end }}
+</section>
+{{ end }}

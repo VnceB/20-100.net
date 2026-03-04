@@ -1,0 +1,25 @@
+baseURL = "https://vnceb.dev/"
+languageCode = "en-us"
+title = "vnceb"
+theme = "mono"
+
+[params]
+  tagline = "Bridging the gap between cutting-edge technology and secure solutions"
+  description = "Enterprise Architect | Security & Technology"
+  github = "https://github.com/vnceb"
+  twitter = "https://x.com/vnceb"
+
+[markup]
+  [markup.highlight]
+    style = "monokai"
+    lineNos = false
+    noClasses = false
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+[pagination]
+  pagerSize = 10
+
+[permalinks]
+  articles = "/articles/:slug/"
