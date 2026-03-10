@@ -248,7 +248,7 @@ This started as a "let me see if OpenFGA even works for this" experiment. It wen
 
 The McKinsey/Lilli breach is a reminder that AI platforms are becoming high-value targets, and the authorization layer is often the weakest part. As agents get more capable and start operating in shared environments, the question of "who is allowed to do what" stops being optional. Relationship-based authorization systems like OpenFGA give you a way to answer that question without building a mess of ad-hoc checks.
 
-This is a proof of concept, not production code. There's a detailed breakdown of what's enforced at the code level, what's modeled but not yet wired in, and what's left to build in the [project README](https://github.com/VnceB/openclaw/tree/feature/openfga-authorization). 126 unit tests and 16 e2e tests against a live OpenFGA instance.
+This is a proof of concept, not production code. There's a detailed breakdown of what's enforced at the code level, what's modeled but not yet wired in, and what's left to build in the [project README](https://github.com/VnceB/openclaw/blob/feature/openfga-authorization/src/auth/README.md). 126 unit tests and 16 e2e tests against a live OpenFGA instance.
 
 ## What's next: the Minecraft test
 
