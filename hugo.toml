@@ -2,6 +2,7 @@ baseURL = "https://www.20-100.net/"
 languageCode = "en-us"
 title = "vnceb"
 theme = "mono"
+enableRobotsTXT = true
 
 [params]
   tagline = "Bridging the gap between cutting-edge technology and secure solutions"
