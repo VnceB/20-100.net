@@ -6,7 +6,8 @@ enableRobotsTXT = true
 
 [params]
   tagline = "Bridging the gap between cutting-edge technology and secure solutions"
-  description = "Enterprise Architect | Security & Technology"
+  author = "Vincent Brousseau"
+  description = "Vincent Brousseau · Enterprise Architect | Security & Technology"
   github = "https://github.com/vnceb"
   gitlab = "https://gitlab.com/vnceb"
   twitter = "https://x.com/vnceb"
