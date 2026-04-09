@@ -2,6 +2,8 @@
 title: "My Son's Spring Break Linux Experiment (and the WiFi Rabbit Hole That Almost Killed It)"
 date: 2026-03-04
 tags: ["linux", "drivers", "claude-code", "open-source"]
+aliases:
+  - /articles/spring-break-linux-experiment/
 ---
 
 My son wanted to try Linux over spring break. His theory: ditching Windows would get him better FPS out of his GPU. I knew it probably wouldn't make a difference, but he was excited, and I was happy he wanted to give it a shot.

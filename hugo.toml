@@ -4,6 +4,9 @@ title = "vnceb"
 theme = "mono"
 enableRobotsTXT = true
 
+[taxonomies]
+  tag = "tags"
+
 [params]
   tagline = "Bridging the gap between cutting-edge technology and secure solutions"
   author = "Vincent Brousseau"
@@ -25,4 +28,6 @@ enableRobotsTXT = true
   pagerSize = 10
 
 [permalinks]
-  articles = "/articles/:slug/"
+  log = "/log/:slug/"
+  deep-dives = "/deep-dives/:slug/"
+  tags = "/topics/:slug/"

@@ -6,7 +6,7 @@
       <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
       {{ with .Params.tags }}
       <span class="post-tags">
-        {{ range . }}<span class="tag">{{ . }}</span>{{ end }}
+        {{ range . }}<a href="{{ "/topics/" | relURL }}{{ . | urlize }}/" class="tag">{{ . }}</a>{{ end }}
       </span>
       {{ end }}
     </div>

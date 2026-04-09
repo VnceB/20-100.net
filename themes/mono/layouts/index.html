@@ -6,9 +6,9 @@
 </section>
 
 <section class="recent">
-  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Recent Articles</h2>
-  {{ $articles := where .Site.RegularPages "Section" "articles" }}
-  {{ range first 5 $articles }}
+  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Recent Log</h2>
+  {{ $log := where .Site.RegularPages "Section" "log" }}
+  {{ range first 5 $log }}
   <article class="article-item">
     <a href="{{ .RelPermalink }}">
       <span class="article-title">{{ .Title }}</span>
@@ -16,10 +16,37 @@
     </a>
   </article>
   {{ else }}
-  <p class="empty-state">No articles yet.</p>
+  <p class="empty-state">No entries yet.</p>
   {{ end }}
-  {{ if gt (len $articles) 5 }}
-  <a href="{{ "/articles/" | relURL }}" class="view-all">View all articles →</a>
+  {{ if gt (len $log) 5 }}
+  <a href="{{ "/log/" | relURL }}" class="view-all">View all entries →</a>
   {{ end }}
+</section>
+
+<section class="recent">
+  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Recent Deep-Dives</h2>
+  {{ $deepdives := where .Site.RegularPages "Section" "deep-dives" }}
+  {{ range first 5 $deepdives }}
+  <article class="article-item">
+    <a href="{{ .RelPermalink }}">
+      <span class="article-title">{{ .Title }}</span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </a>
+  </article>
+  {{ else }}
+  <p class="empty-state">No deep-dives yet.</p>
+  {{ end }}
+  {{ if gt (len $deepdives) 5 }}
+  <a href="{{ "/deep-dives/" | relURL }}" class="view-all">View all deep-dives →</a>
+  {{ end }}
+</section>
+
+<section class="recent">
+  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Topics</h2>
+  <div class="topic-grid">
+    {{ range .Site.Taxonomies.tags.Alphabetical }}
+    <a href="{{ .Page.RelPermalink }}" class="topic-pill">{{ .Page.Title }} <span class="topic-count">{{ .Count }}</span></a>
+    {{ end }}
+  </div>
 </section>
 {{ end }}

@@ -1,0 +1,11 @@
+{{ define "main" }}
+<section class="page-header">
+  <h1 class="section-heading"><span class="heading-accent">&gt;</span> {{ .Title }}</h1>
+</section>
+
+<section class="topic-grid">
+  {{ range .Site.Taxonomies.tags.Alphabetical }}
+  <a href="{{ .Page.RelPermalink }}" class="topic-pill">{{ .Page.Title }} <span class="topic-count">{{ .Count }}</span></a>
+  {{ end }}
+</section>
+{{ end }}

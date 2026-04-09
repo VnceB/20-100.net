@@ -3,6 +3,8 @@ title: "Contributing to Open Source Again, With AI"
 date: 2026-03-21
 tags: ["open-source", "ai", "mcp", "tiki-wiki", "claude-code"]
 description: "How I used Claude Code to build an MCP server for Tiki Wiki and submit my first open source contribution in years."
+aliases:
+  - /articles/contributing-to-open-source-again-with-ai/
 ---
 
 > **Heads up:** Much of the prose and code here are AI-assisted, but the ideas are my own.

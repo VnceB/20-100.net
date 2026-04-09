@@ -1,0 +1,18 @@
+{{ define "main" }}
+<section class="page-header">
+  <h1 class="section-heading"><span class="heading-accent">&gt;</span> {{ .Title }}</h1>
+</section>
+
+<section class="article-list">
+  {{ range .Pages }}
+  <article class="article-item">
+    <a href="{{ .RelPermalink }}">
+      <span class="article-title">{{ .Title }}</span>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </a>
+  </article>
+  {{ else }}
+  <p class="empty-state">Nothing here yet.</p>
+  {{ end }}
+</section>
+{{ end }}

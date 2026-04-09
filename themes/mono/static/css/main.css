@@ -131,6 +131,24 @@ nav {
   margin-right: 0.25rem;
 }
 
+.nav-social {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: 0.75rem;
+  padding-left: 1rem;
+  border-left: 1px solid var(--border);
+}
+
+.social-icon {
+  color: var(--text-dim);
+  display: inline-flex;
+  align-items: center;
+}
+
+.social-icon:hover {
+  color: var(--text-bright);
+}
+
 /* --- Footer --- */
 footer {
   border-top: 1px solid var(--border);
@@ -156,6 +174,12 @@ footer {
 
 .footer-links a:hover {
   color: var(--text-bright);
+}
+
+.footer-links {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .footer-sep {
@@ -305,6 +329,44 @@ footer {
   border-radius: 3px;
   font-size: 0.78rem;
   margin-left: 0.25rem;
+  color: var(--text-dim);
+  text-decoration: none;
+}
+
+.tag:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+/* --- Topic Grid --- */
+.topic-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding-top: 0.5rem;
+}
+
+.topic-pill {
+  background: var(--bg-raised);
+  border: 1px solid var(--border);
+  padding: 0.4em 0.85em;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--text);
+  text-decoration: none;
+  transition: border-color 0.15s ease, color 0.15s ease;
+}
+
+.topic-pill:hover {
+  color: var(--accent);
+  border-color: var(--accent-dim);
+}
+
+.topic-count {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  margin-left: 0.3em;
 }
 
 /* --- Post Content (long-form typography) --- */
