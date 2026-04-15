@@ -26,9 +26,9 @@
 </section>
 
 <section class="recent">
-  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Recent Deep-Dives</h2>
-  {{ $deepdives := where .Site.RegularPages "Section" "deep-dives" }}
-  {{ range first 5 $deepdives }}
+  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Recent Research</h2>
+  {{ $research := where .Site.RegularPages "Section" "research" }}
+  {{ range first 5 $research }}
   <article class="article-item">
     <a href="{{ .RelPermalink }}">
       <div class="article-header">
@@ -39,10 +39,10 @@
     </a>
   </article>
   {{ else }}
-  <p class="empty-state">No deep-dives yet.</p>
+  <p class="empty-state">No research yet.</p>
   {{ end }}
-  {{ if gt (len $deepdives) 5 }}
-  <a href="{{ "/deep-dives/" | relURL }}" class="view-all">View all deep-dives →</a>
+  {{ if gt (len $research) 5 }}
+  <a href="{{ "/research/" | relURL }}" class="view-all">View all research →</a>
   {{ end }}
 </section>
 

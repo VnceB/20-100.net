@@ -29,5 +29,5 @@ enableRobotsTXT = true
 
 [permalinks]
   log = "/log/:slug/"
-  deep-dives = "/deep-dives/:slug/"
+  research = "/research/:slug/"
   tags = "/topics/:slug/"
