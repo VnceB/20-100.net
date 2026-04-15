@@ -422,6 +422,14 @@ footer {
   margin-left: 0.3em;
 }
 
+.ai-disclosure {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  border-left: 3px solid var(--green-accent);
+  padding: 0.5rem 1rem;
+  margin-bottom: 2rem;
+}
+
 /* --- Post Content (long-form typography) --- */
 .post-content {
   max-width: var(--content-width);
