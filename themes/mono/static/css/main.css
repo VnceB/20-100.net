@@ -70,6 +70,7 @@
   --accent:    #7aa2f7;
   --accent-dim:#3d5a8a;
   --green:     #9ece6a;
+  --green-accent: #267d39;
   --orange:    #e0af68;
   --red:       #f7768e;
   --purple:    #bb9af7;
@@ -88,7 +89,7 @@ html {
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   background: var(--bg);
   color: var(--text);
   line-height: 1.7;
@@ -131,14 +132,18 @@ nav {
 
 .nav-logo {
   font-family: var(--font-mono);
-  font-size: 1.1rem;
-  font-weight: 500;
-  color: var(--text-bright);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #fff;
   letter-spacing: -0.02em;
+  background: var(--green-accent);
+  padding: 0.25em 0.5em;
+  border-radius: 4px;
 }
 
 .nav-logo:hover {
-  color: var(--accent);
+  color: #fff;
+  opacity: 0.85;
 }
 
 .nav-links {
@@ -226,7 +231,7 @@ footer {
 
 /* --- Hero (Homepage) --- */
 .hero {
-  padding: 4rem 0 3rem;
+  padding: 1.5rem 0 2rem;
 }
 
 .hero-name {
@@ -279,10 +284,7 @@ footer {
 }
 
 .article-item a {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1rem;
+  display: block;
   padding: 0.7rem 0.75rem;
   margin: 0 -0.75rem;
   border-radius: 6px;
@@ -293,9 +295,27 @@ footer {
   background: var(--bg-hover);
 }
 
+.article-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
 .article-title {
   color: var(--text-bright);
   font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: var(--green-accent);
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+.article-summary {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-top: 0.3rem;
+  line-height: 1.5;
 }
 
 .article-item time {
@@ -332,7 +352,7 @@ footer {
 /* --- Single Post --- */
 .post-header {
   padding: 2.5rem 0 2rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--green-accent);
   margin-bottom: 2.5rem;
 }
 
@@ -557,6 +577,7 @@ footer {
   cursor: pointer;
   color: var(--text-dim);
   padding: 0;
+  margin-left: 0.75rem;
   display: inline-flex;
   align-items: center;
   line-height: 1;
@@ -577,7 +598,7 @@ footer {
   }
 
   .hero {
-    padding: 2.5rem 0 2rem;
+    padding: 1rem 0 1.5rem;
   }
 
   .hero-name {
@@ -588,7 +609,7 @@ footer {
     font-size: 1.6rem;
   }
 
-  .article-item a {
+  .article-header {
     flex-direction: column;
     gap: 0.2rem;
   }

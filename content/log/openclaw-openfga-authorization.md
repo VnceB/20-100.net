@@ -2,6 +2,7 @@
 title: "Scaling OpenClaw's Agentic AI to Multi-User Environments with OpenFGA Authorization"
 date: 2026-03-10
 tags: ["openclaw", "openfga", "authorization", "ai-agents", "security"]
+description: "Adding fine-grained authorization to OpenClaw's agentic AI platform using OpenFGA for multi-user environments."
 aliases:
   - /articles/openclaw-openfga-authorization/
 ---

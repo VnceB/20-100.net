@@ -7,8 +7,11 @@
   {{ range .Pages }}
   <article class="article-item">
     <a href="{{ .RelPermalink }}">
-      <span class="article-title">{{ .Title }}</span>
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      <div class="article-header">
+        <span class="article-title">{{ .Title }}</span>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+      </div>
+      {{ with .Description }}<p class="article-summary">{{ . }}</p>{{ end }}
     </a>
   </article>
   {{ else }}

@@ -2,6 +2,7 @@
 title: "My Son's Spring Break Linux Experiment (and the WiFi Rabbit Hole That Almost Killed It)"
 date: 2026-03-04
 tags: ["linux", "drivers", "claude-code", "open-source"]
+description: "My son wanted to try Linux over spring break for better FPS. What followed was a WiFi driver rabbit hole that nearly ended the experiment."
 aliases:
   - /articles/spring-break-linux-experiment/
 ---
