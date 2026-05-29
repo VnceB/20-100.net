@@ -8,9 +8,9 @@ enableRobotsTXT = true
   tag = "tags"
 
 [params]
-  tagline = "Bridging the gap between cutting-edge technology and secure solutions"
+  tagline = "Pragmatic notes on IAM, cybersecurity, and emerging technologies"
   author = "Vincent Brousseau"
-  description = "Vincent Brousseau · Enterprise Architect | Security & Technology"
+  description = "Vincent Brousseau · Enterprise Architect, IAM & Cybersecurity"
   github = "https://github.com/vnceb"
   gitlab = "https://gitlab.com/vnceb"
   twitter = "https://x.com/vnceb"

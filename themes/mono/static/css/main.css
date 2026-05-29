@@ -64,13 +64,13 @@
   --bg:        #0e0e10;
   --bg-raised: #16161a;
   --bg-hover:  #1c1c22;
+  --bg-accent: rgba(20, 114, 191, 0.12);
   --text:      #c9c9d0;
   --text-dim:  #6e6e7a;
   --text-bright: #e4e4ea;
   --accent:    #7aa2f7;
   --accent-dim:#3d5a8a;
-  --green:     #9ece6a;
-  --green-accent: #267d39;
+  --brand-blue: #1472bf;
   --orange:    #e0af68;
   --red:       #f7768e;
   --purple:    #bb9af7;
@@ -112,6 +112,12 @@ a {
   transition: color 0.15s ease;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--brand-blue);
+  outline-offset: 4px;
+}
+
 a:hover {
   color: var(--text-bright);
 }
@@ -136,7 +142,7 @@ nav {
   font-weight: 600;
   color: #fff;
   letter-spacing: -0.02em;
-  background: var(--green-accent);
+  background: var(--brand-blue);
   padding: 0.25em 0.5em;
   border-radius: 4px;
 }
@@ -231,16 +237,9 @@ footer {
 
 /* --- Hero (Homepage) --- */
 .hero {
-  padding: 1.5rem 0 2rem;
-}
-
-.hero-name {
-  font-family: var(--font-mono);
-  font-size: 2.4rem;
-  font-weight: 600;
-  color: var(--text-bright);
-  letter-spacing: -0.03em;
-  margin-bottom: 0.6rem;
+  padding: 2.25rem 0 3rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.25rem;
 }
 
 .hero-tagline {
@@ -276,11 +275,33 @@ footer {
 
 /* --- Article List --- */
 .recent {
-  padding-top: 1rem;
+  padding-top: 1.75rem;
+}
+
+.recent + .recent {
+  margin-top: 1rem;
 }
 
 .article-list {
-  padding-top: 0.5rem;
+  padding-top: 0.75rem;
+}
+
+.article-item {
+  position: relative;
+  border-left: 1px solid var(--border);
+  padding-left: 0.9rem;
+}
+
+.article-item::before {
+  content: "";
+  position: absolute;
+  left: -4px;
+  top: 1.25rem;
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--bg);
+  border: 1px solid var(--brand-blue);
 }
 
 .article-item a {
@@ -288,11 +309,12 @@ footer {
   padding: 0.7rem 0.75rem;
   margin: 0 -0.75rem;
   border-radius: 6px;
-  transition: background 0.15s ease;
+  transition: background 0.15s ease, transform 0.15s ease;
 }
 
 .article-item a:hover {
-  background: var(--bg-hover);
+  background: var(--bg-accent);
+  transform: translateX(2px);
 }
 
 .article-header {
@@ -306,7 +328,7 @@ footer {
   color: var(--text-bright);
   font-weight: 500;
   text-decoration: underline;
-  text-decoration-color: var(--green-accent);
+  text-decoration-color: var(--brand-blue);
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
 }
@@ -346,13 +368,21 @@ footer {
 
 /* --- Page Header (list pages) --- */
 .page-header {
-  padding: 2.5rem 0 0.5rem;
+  padding: 2.5rem 0 1rem;
+}
+
+.page-intro {
+  max-width: var(--content-width);
+  color: var(--text);
+  font-size: 1.02rem;
+  line-height: 1.6;
+  margin-top: -0.35rem;
 }
 
 /* --- Single Post --- */
 .post-header {
   padding: 2.5rem 0 2rem;
-  border-bottom: 1px solid var(--green-accent);
+  border-bottom: 1px solid var(--brand-blue);
   margin-bottom: 2.5rem;
 }
 
@@ -384,11 +414,13 @@ footer {
   margin-left: 0.25rem;
   color: var(--text-dim);
   text-decoration: none;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .tag:hover {
-  color: var(--accent);
-  border-color: var(--accent-dim);
+  color: var(--text-bright);
+  background: var(--bg-accent);
+  border-color: var(--brand-blue);
 }
 
 /* --- Topic Grid --- */
@@ -408,12 +440,13 @@ footer {
   font-size: 0.82rem;
   color: var(--text);
   text-decoration: none;
-  transition: border-color 0.15s ease, color 0.15s ease;
+  transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
 }
 
 .topic-pill:hover {
-  color: var(--accent);
-  border-color: var(--accent-dim);
+  color: var(--text-bright);
+  background: var(--bg-accent);
+  border-color: var(--brand-blue);
 }
 
 .topic-count {
@@ -425,7 +458,7 @@ footer {
 .ai-disclosure {
   font-size: 0.85rem;
   color: var(--text-dim);
-  border-left: 3px solid var(--green-accent);
+  border-left: 3px solid var(--brand-blue);
   padding: 0.5rem 1rem;
   margin-bottom: 2rem;
 }
@@ -609,10 +642,6 @@ footer {
     padding: 1rem 0 1.5rem;
   }
 
-  .hero-name {
-    font-size: 1.8rem;
-  }
-
   .post-title {
     font-size: 1.6rem;
   }
@@ -624,6 +653,16 @@ footer {
 
   .nav-inner {
     padding: 1rem 1rem;
+  }
+
+  .nav-links {
+    gap: 0.8rem;
+  }
+
+  .nav-social {
+    gap: 0.55rem;
+    margin-left: 0.35rem;
+    padding-left: 0.65rem;
   }
 
   main {
