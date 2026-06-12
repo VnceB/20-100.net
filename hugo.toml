@@ -1,14 +1,17 @@
 baseURL = "https://www.20-100.net/"
-languageCode = "en-us"
+locale = "en-us"
 title = "vnceb"
 theme = "mono"
 enableRobotsTXT = true
+capitalizeListTitles = false
+pluralizeListTitles = false
+rssLimit = 20
 
 [taxonomies]
   tag = "tags"
 
 [params]
-  tagline = "Pragmatic notes on IAM, cybersecurity, and emerging technologies"
+  tagline = "Notes on IAM, cybersecurity, AI, and emerging technologies"
   author = "Vincent Brousseau"
   description = "Vincent Brousseau · Enterprise Architect, IAM & Cybersecurity"
   github = "https://github.com/vnceb"

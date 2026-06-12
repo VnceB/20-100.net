@@ -1,13 +1,37 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.Language.Locale }}">
 <head>
   {{- partial "head.html" . -}}
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   {{- partial "nav.html" . -}}
-  <main>
+  <main id="main">
     {{- block "main" . }}{{ end -}}
   </main>
   {{- partial "footer.html" . -}}
+  <script>
+    (function () {
+      var btn = document.querySelector('.theme-toggle');
+      if (!btn) return;
+      var mq = window.matchMedia('(prefers-color-scheme: light)');
+      function stored() {
+        try { return localStorage.getItem('theme'); } catch (e) { return null; }
+      }
+      function apply(t) {
+        document.documentElement.setAttribute('data-theme', t);
+        btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light theme' : 'Switch to dark theme');
+      }
+      btn.addEventListener('click', function () {
+        var next = document.documentElement.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+        try { localStorage.setItem('theme', next); } catch (e) {}
+        apply(next);
+      });
+      mq.addEventListener('change', function (e) {
+        if (!stored()) apply(e.matches ? 'light' : 'dark');
+      });
+      apply(document.documentElement.getAttribute('data-theme') || 'dark');
+    })();
+  </script>
 </body>
 </html>

@@ -1,0 +1,39 @@
+{{ if .IsHome -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": {{ .Site.Title | jsonify }},
+  "url": {{ .Site.BaseURL | jsonify }},
+  "description": {{ .Site.Params.description | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ .Site.Params.author | jsonify }},
+    "url": {{ .Site.BaseURL | jsonify }},
+    "sameAs": [
+      {{ .Site.Params.github | jsonify }},
+      {{ .Site.Params.gitlab | jsonify }},
+      {{ .Site.Params.twitter | jsonify }}
+    ]
+  }
+}
+</script>
+{{ else if and .IsPage (or (eq .Section "log") (eq .Section "research")) -}}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": {{ .Title | jsonify }},
+  "description": {{ .Description | jsonify }},
+  "url": {{ .Permalink | jsonify }},
+  "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
+  "dateModified": {{ .Lastmod.Format "2006-01-02" | jsonify }},
+  "author": {
+    "@type": "Person",
+    "name": {{ .Site.Params.author | jsonify }},
+    "url": {{ .Site.BaseURL | jsonify }}
+  }{{ if .Params.tags }},
+  "keywords": {{ delimit .Params.tags ", " | jsonify }}{{ end }}
+}
+</script>
+{{ end -}}

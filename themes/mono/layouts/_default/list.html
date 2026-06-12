@@ -1,6 +1,6 @@
 {{ define "main" }}
 <section class="page-header">
-  <h1 class="section-heading"><span class="heading-accent">&gt;</span> {{ .Title }}</h1>
+  <h1 class="section-heading"><span class="heading-accent" aria-hidden="true">&gt;</span> {{ .Title }}</h1>
   {{ with .Content }}
   <div class="page-intro">
     {{ . }}
@@ -14,7 +14,7 @@
     <a href="{{ .RelPermalink }}">
       <div class="article-header">
         <span class="article-title">{{ .Title }}</span>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
       </div>
       {{ with .Description }}<p class="article-summary">{{ . }}</p>{{ end }}
     </a>

@@ -1,18 +1,17 @@
 {{ define "main" }}
 <section class="hero">
-  <p class="hero-tagline">{{ .Site.Params.tagline }}</p>
-  <p class="hero-desc">{{ .Site.Params.description }}</p>
+  <h1 class="hero-tagline">{{ .Site.Params.tagline }}</h1>
 </section>
 
 <section class="recent">
-  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Recent Log</h2>
+  <h2 class="section-heading"><span class="heading-accent" aria-hidden="true">&gt;</span> Recent log</h2>
   {{ $log := where .Site.RegularPages "Section" "log" }}
   {{ range first 5 $log }}
   <article class="article-item">
     <a href="{{ .RelPermalink }}">
       <div class="article-header">
         <span class="article-title">{{ .Title }}</span>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
       </div>
       {{ with .Description }}<p class="article-summary">{{ . }}</p>{{ end }}
     </a>
@@ -21,19 +20,19 @@
   <p class="empty-state">No entries yet.</p>
   {{ end }}
   {{ if gt (len $log) 5 }}
-  <a href="{{ "/log/" | relURL }}" class="view-all">View all entries →</a>
+  <a href="{{ "/log/" | relURL }}" class="view-all">All log entries</a>
   {{ end }}
 </section>
 
 <section class="recent">
-  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Recent Research</h2>
+  <h2 class="section-heading"><span class="heading-accent" aria-hidden="true">&gt;</span> Recent research</h2>
   {{ $research := where .Site.RegularPages "Section" "research" }}
   {{ range first 5 $research }}
   <article class="article-item">
     <a href="{{ .RelPermalink }}">
       <div class="article-header">
         <span class="article-title">{{ .Title }}</span>
-        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "Jan 2, 2006" }}</time>
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02" }}</time>
       </div>
       {{ with .Description }}<p class="article-summary">{{ . }}</p>{{ end }}
     </a>
@@ -42,12 +41,12 @@
   <p class="empty-state">No research yet.</p>
   {{ end }}
   {{ if gt (len $research) 5 }}
-  <a href="{{ "/research/" | relURL }}" class="view-all">View all research →</a>
+  <a href="{{ "/research/" | relURL }}" class="view-all">All research notes</a>
   {{ end }}
 </section>
 
 <section class="recent">
-  <h2 class="section-heading"><span class="heading-accent">&gt;</span> Topics</h2>
+  <h2 class="section-heading"><span class="heading-accent" aria-hidden="true">&gt;</span> Topics</h2>
   <div class="topic-grid">
     {{ range .Site.Taxonomies.tags.Alphabetical }}
     <a href="{{ .Page.RelPermalink }}" class="topic-pill">{{ .Page.Title }} <span class="topic-count">{{ .Count }}</span></a>
