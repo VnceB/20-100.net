@@ -1,5 +1,5 @@
 baseURL = "https://www.20-100.net/"
-locale = "en-us"
+languageCode = "en-us"
 title = "vnceb"
 theme = "mono"
 enableRobotsTXT = true
